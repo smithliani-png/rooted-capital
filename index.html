@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooted Capital | Investing in the Roots of Tomorrow</title>
+<meta name="description" content="Rooted Capital invests in sustainable, community-driven food security ventures. Read our criteria, meet the fund, and pitch your idea.">
+<link rel="icon" href="rooted_capital_logo_offwhite.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2C5234;
+    --mid-leaf:#4C7A34;
+    --fresh-leaf:#8EB057;
+    --dark-earth:#5B3923;
+    --wood:#9B6B43;
+    --soil:#3D2616;
+    --cream:#F7F1E6;
+    --cream-deep:#EDE2CE;
+    --cream-line: rgba(61,38,22,0.14);
+    --font-display:'Oswald', sans-serif;
+    --font-body:'DM Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+    --radius-sm:4px;
+    --radius-md:8px;
+    --content-w:1160px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--cream);
+    color:var(--soil);
+    font-family:var(--font-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    isolation:isolate;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:999;
+    pointer-events:none;
+    opacity:0.045;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size:160px 160px;
+  }
+
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    color:var(--forest);
+  }
+
+  .mono{
+    font-family:var(--font-mono);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+  }
+
+  .wrap{ max-width:var(--content-w); margin:0 auto; padding:0 32px; }
+
+  /* ===== Header ===== */
+  header.site-header{
+    position:sticky; top:0; z-index:50;
+    background:var(--forest);
+    border-bottom:1px solid rgba(247,241,230,0.14);
+  }
+  header.site-header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand img{ width:38px; height:38px; }
+  .brand span{
+    font-family:var(--font-display); color:var(--cream);
+    font-weight:600; letter-spacing:0.06em; font-size:17px; text-transform:uppercase;
+  }
+  nav.site-nav{ display:flex; align-items:center; gap:28px; }
+  nav.site-nav a.nav-link{
+    font-family:var(--font-mono); font-size:11px; font-weight:600;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--cream-deep); text-decoration:none;
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color 0.2s ease, border-color 0.2s ease;
+  }
+  nav.site-nav a.nav-link:hover{ color:var(--fresh-leaf); border-color:var(--fresh-leaf); }
+  a.btn-primary{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--fresh-leaf); color:var(--soil);
+    font-family:var(--font-mono); font-weight:600; font-size:11px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    text-decoration:none; padding:11px 20px; border-radius:var(--radius-sm);
+    transition:background 0.2s ease, transform 0.2s ease;
+    white-space:nowrap;
+  }
+  a.btn-primary:hover{ background:var(--cream); transform:translateY(-1px); }
+  .menu-toggle{ display:none; }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:var(--soil);
+    color:var(--cream);
+    overflow:hidden;
+    padding:96px 0 84px;
+  }
+  .hero .roots{
+    position:absolute; left:0; right:0; bottom:-2px; height:70%;
+    opacity:0.5; pointer-events:none;
+  }
+  .hero .wrap{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:auto 1fr; gap:44px; align-items:center;
+  }
+  .hero .badge{ width:172px; height:172px; }
+  .hero .eyebrow{
+    font-family:var(--font-mono); font-size:12px; font-weight:600;
+    letter-spacing:0.2em; text-transform:uppercase; color:var(--fresh-leaf);
+    margin-bottom:16px;
+  }
+  .hero h1{
+    color:var(--cream); font-size:clamp(38px,5.6vw,66px);
+    line-height:0.98; font-weight:700; letter-spacing:0; margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal; color:var(--fresh-leaf); display:block;
+  }
+  .hero p.lede{
+    max-width:520px; font-size:16px; color:rgba(247,241,230,0.82);
+    font-weight:400;
+  }
+  .hero .scroll-cue{
+    margin-top:36px; display:flex; align-items:center; gap:10px;
+    font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em;
+    color:rgba(247,241,230,0.55); text-transform:uppercase;
+  }
+  .hero .scroll-cue svg{ width:14px; height:14px; }
+
+  @media (max-width:760px){
+    .hero .wrap{ grid-template-columns:1fr; text-align:left; }
+    .hero .badge{ width:96px; height:96px; }
+  }
+
+  /* ===== Section scaffolding ===== */
+  .section{ padding:84px 0; }
+  .section.alt{ background:var(--cream-deep); }
+  .section-head{
+    display:flex; align-items:baseline; gap:18px; margin-bottom:40px;
+    border-bottom:1px solid var(--cream-line); padding-bottom:20px;
+  }
+  .section-head .idx{
+    font-family:var(--font-mono); font-size:13px; font-weight:700;
+    letter-spacing:0.14em; color:var(--wood); flex:0 0 auto;
+  }
+  .section-head h2{ font-size:clamp(26px,3.2vw,36px); line-height:1.05; }
+  .section-head .tag{
+    margin-left:auto; font-family:var(--font-mono); font-size:10px;
+    font-weight:600; letter-spacing:0.14em; color:var(--wood);
+    text-transform:uppercase; display:none;
+  }
+  @media (min-width:640px){ .section-head .tag{ display:inline; } }
+
+  .lede-block{ max-width:760px; font-size:16px; color:var(--soil); }
+  .lede-block p + p{ margin-top:14px; }
+
+  /* ===== Mission / Vision ===== */
+  .mv-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .mv-card{
+    background:var(--cream); border:1px solid var(--cream-line);
+    border-left:4px solid var(--forest); padding:28px 26px; border-radius:var(--radius-sm);
+  }
+  .mv-card .label{
+    font-family:var(--font-mono); font-size:11px; font-weight:700;
+    letter-spacing:0.14em; color:var(--wood); text-transform:uppercase; margin-bottom:12px;
+  }
+  .mv-card p{ font-size:16px; color:var(--forest); font-weight:500; line-height:1.5; }
+
+  /* ===== Invest list ===== */
+  .invest-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:0 48px;
+  }
+  .invest-item{
+    display:flex; gap:16px; align-items:baseline;
+    padding:18px 0; border-bottom:1px solid var(--cream-line);
+  }
+  .invest-item .num{
+    font-family:var(--font-mono); font-size:12px; font-weight:700;
+    color:var(--fresh-leaf); flex:0 0 26px;
+  }
+  .invest-item span.txt{ font-size:15px; color:var(--soil); }
+
+  /* ===== Criteria ===== */
+  .criteria-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .criteria-card{
+    padding:26px 24px; background:var(--forest); color:var(--cream);
+    border-radius:var(--radius-sm); position:relative;
+  }
+  .criteria-card .num{
+    font-family:var(--font-mono); font-size:13px; font-weight:700;
+    color:var(--fresh-leaf); letter-spacing:0.1em; display:block; margin-bottom:10px;
+  }
+  .criteria-card h3{ color:var(--cream); font-size:17px; margin-bottom:8px; }
+  .criteria-card p{ font-size:14px; color:rgba(247,241,230,0.82); }
+
+  /* ===== Investor ===== */
+  .investor-grid{
+    display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center;
+  }
+  .investor-avatar{
+    width:104px; height:104px; border-radius:50%;
+    background:var(--forest); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:26px; letter-spacing:0.04em;
+    border:3px solid var(--cream); box-shadow:0 0 0 1px var(--wood);
+    flex:0 0 auto;
+  }
+  blockquote.quote{
+    font-family:var(--font-body); font-style:italic; font-weight:500;
+    font-size:clamp(20px,2.4vw,26px); color:var(--forest); line-height:1.45;
+    margin-bottom:16px;
+  }
+  .quote-cite{
+    font-family:var(--font-mono); font-size:12px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--wood);
+  }
+  @media (max-width:640px){ .investor-grid{ grid-template-columns:1fr; text-align:left; } }
+
+  /* ===== Portfolio ===== */
+  .portfolio-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .portfolio-card{
+    background:var(--cream); border:1px solid var(--cream-line);
+    border-radius:var(--radius-md); overflow:hidden;
+  }
+  .portfolio-card .card-top{
+    background:var(--dark-earth); padding:22px 22px 18px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .portfolio-card .card-top .num{
+    font-family:var(--font-mono); font-size:11px; font-weight:700;
+    letter-spacing:0.1em; color:rgba(247,241,230,0.6);
+  }
+  .portfolio-card .card-top svg{ width:26px; height:26px; color:var(--fresh-leaf); }
+  .portfolio-card .body{ padding:20px 22px 24px; }
+  .portfolio-card h3{ font-size:16px; margin-bottom:8px; }
+  .portfolio-card p{ font-size:13.5px; color:var(--soil); }
+
+  /* ===== Pitch / CTA ===== */
+  .pitch{
+    background:var(--forest); color:var(--cream);
+    padding:88px 0;
+  }
+  .pitch .section-head{ border-bottom-color:rgba(247,241,230,0.2); }
+  .pitch .section-head h2{ color:var(--cream); }
+  .pitch .section-head .idx{ color:var(--fresh-leaf); }
+
+  .steps{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin-bottom:52px;
+  }
+  .step .num{
+    font-family:var(--font-mono); font-size:12px; font-weight:700;
+    color:var(--fresh-leaf); letter-spacing:0.1em; display:block; margin-bottom:10px;
+  }
+  .step h4{
+    font-family:var(--font-mono); font-size:12px; font-weight:600;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--cream);
+    margin-bottom:8px;
+  }
+  .step p{ font-size:14px; color:rgba(247,241,230,0.78); }
+
+  .pitch-cta{
+    display:flex; align-items:center; justify-content:space-between; gap:40px;
+    flex-wrap:wrap; padding-top:44px; border-top:1px solid rgba(247,241,230,0.2);
+  }
+  .pitch-cta .copy p.lede{
+    max-width:420px; font-size:15px; color:rgba(247,241,230,0.82); margin-bottom:22px;
+  }
+  a.btn-cta{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--fresh-leaf); color:var(--soil);
+    font-family:var(--font-mono); font-weight:700; font-size:13px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    text-decoration:none; padding:16px 30px; border-radius:var(--radius-sm);
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  a.btn-cta:hover{ background:var(--cream); transform:translateY(-1px); }
+
+  .qr-card{
+    background:var(--cream); border:2px solid var(--fresh-leaf);
+    border-radius:var(--radius-md);
+    padding:16px 18px 12px; display:inline-flex; flex-direction:column;
+    align-items:center; gap:10px; flex:0 0 auto;
+  }
+  .qr-card img{ width:132px; height:132px; }
+  .qr-card span{
+    font-family:var(--font-mono); font-size:10px; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--forest);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--soil); color:rgba(247,241,230,0.6);
+    padding:30px 0;
+  }
+  footer .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; flex-wrap:wrap;
+  }
+  footer .foot-brand{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--cream-deep);
+  }
+  footer .foot-tag{ font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em; }
+
+  /* ===== Responsive ===== */
+  @media (max-width:900px){
+    .invest-grid{ grid-template-columns:1fr; }
+    .portfolio-grid{ grid-template-columns:1fr 1fr; }
+    .steps{ grid-template-columns:1fr; }
+  }
+  @media (max-width:760px){
+    nav.site-nav .nav-link{ display:none; }
+    .mv-grid, .criteria-grid{ grid-template-columns:1fr; }
+    .portfolio-grid{ grid-template-columns:1fr; }
+    .investor-grid{ grid-template-columns:1fr; }
+    .pitch-cta{ flex-direction:column; align-items:flex-start; }
+    .section{ padding:64px 0; }
+    .wrap{ padding:0 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="rooted_capital_logo_offwhite.png" alt="Rooted Capital">
+        <span>Rooted Capital</span>
+      </a>
+      <nav class="site-nav">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#criteria">Criteria</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="btn-primary" href="#pitch">Pitch to Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <svg class="roots" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="none" stroke="#9B6B43" stroke-width="2" stroke-linecap="round">
+        <path d="M600 0 C 600 90, 520 110, 480 190 S 380 300, 340 420" />
+        <path d="M600 0 C 600 100, 660 120, 700 210 S 780 320, 810 460" />
+        <path d="M600 0 C 600 80, 560 100, 520 160 S 460 250, 430 340" />
+        <path d="M600 0 C 600 85, 645 105, 690 170 S 760 260, 800 330" />
+        <path d="M480 190 C 440 230, 420 260, 380 320" />
+        <path d="M700 210 C 740 250, 760 280, 800 340" />
+      </g>
+      <g fill="none" stroke="#4C7A34" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
+        <path d="M600 0 C 600 95, 540 118, 500 200 S 420 310, 370 430" />
+        <path d="M600 0 C 600 95, 670 118, 715 220 S 800 330, 840 470" />
+      </g>
+    </svg>
+    <div class="wrap">
+      <img class="badge" src="rooted_capital_logo_offwhite.png" alt="Rooted Capital logo">
+      <div>
+        <div class="eyebrow">Sustainable Food Security Fund</div>
+        <h1>Investing in the<em>Roots of Tomorrow</em></h1>
+        <p class="lede">
+          Rooted Capital was founded on a simple belief: the strongest communities
+          are the ones that can feed themselves. What began as a small family trust
+          supporting local market gardens has grown into a fund dedicated to backing
+          bold, practical ideas in sustainable food security.
+        </p>
+        <div class="scroll-cue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v14M6 13l6 6 6-6"/></svg>
+          Scroll to explore
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/01</span>
+          <h2>About Us</h2>
+          <span class="tag mono">Who We Are</span>
+        </div>
+        <div class="lede-block">
+          <p>
+            We look for young, sharp-thinking teams who are not afraid of hard numbers
+            and harder questions. When we find them, we invest early, and we invest
+            generously.
+          </p>
+          <p>
+            We back teams who understand their numbers as well as they understand
+            their purpose.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="purpose">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/02</span>
+          <h2>Our Purpose</h2>
+          <span class="tag mono">Mission &amp; Vision</span>
+        </div>
+        <div class="mv-grid">
+          <div class="mv-card">
+            <div class="label">Mission Statement</div>
+            <p>To fund sustainable, community-driven food solutions that turn limited land and resources into real, lasting nourishment.</p>
+          </div>
+          <div class="mv-card">
+            <div class="label">Vision Statement</div>
+            <p>A future where no community is more than a short walk from food it grew itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="invest">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/03</span>
+          <h2>What We Invest In</h2>
+          <span class="tag mono">Focus Areas</span>
+        </div>
+        <div class="invest-grid">
+          <div class="invest-item"><span class="num mono">01</span><span class="txt">Sustainable agriculture and low-input growing methods</span></div>
+          <div class="invest-item"><span class="num mono">02</span><span class="txt">Community food security projects</span></div>
+          <div class="invest-item"><span class="num mono">03</span><span class="txt">Cost-effective, high-impact design</span></div>
+          <div class="invest-item"><span class="num mono">04</span><span class="txt">Green and climate-resilient innovation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="criteria">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/04</span>
+          <h2>What We Look For</h2>
+          <span class="tag mono">Investment Criteria</span>
+        </div>
+        <div class="criteria-grid">
+          <div class="criteria-card">
+            <span class="num mono">01</span>
+            <h3>Sustainability</h3>
+            <p>Does the plan use resources wisely and responsibly?</p>
+          </div>
+          <div class="criteria-card">
+            <span class="num mono">02</span>
+            <h3>Cost Realism</h3>
+            <p>Is the budget honest, practical, and well justified?</p>
+          </div>
+          <div class="criteria-card">
+            <span class="num mono">03</span>
+            <h3>Community Impact</h3>
+            <p>Does it genuinely serve the people it is designed for?</p>
+          </div>
+          <div class="criteria-card">
+            <span class="num mono">04</span>
+            <h3>Creativity &amp; Design</h3>
+            <p>Is the solution well thought out, clear, and original?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="investor">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/05</span>
+          <h2>Meet the Investor</h2>
+          <span class="tag mono">Founder</span>
+        </div>
+        <div class="investor-grid">
+          <div class="investor-avatar">TR</div>
+          <div>
+            <blockquote class="quote">
+              "I don't invest in the fanciest ideas, I invest in the ones that
+              actually work. Show me your soil, your numbers, and your reasoning,
+              and I'll show you my chequebook."
+            </blockquote>
+            <div class="quote-cite">Ms T. Rootwell &middot; Founder, Rooted Capital</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="idx mono">/06</span>
+          <h2>Past Investments</h2>
+          <span class="tag mono">Portfolio</span>
+        </div>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="card-top">
+              <span class="num mono">/01</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 21V10M12 10c0-4 3-6 7-6-1 4-3 6-7 6ZM12 13c0-3-2.5-5-6-5 1 3 3 5 6 5Z"/></svg>
+            </div>
+            <div class="body">
+              <h3>Greenfields Growers</h3>
+              <p>A community garden co-op that turned an unused sports field into a working vegetable plot feeding 40 families.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-top">
+              <span class="num mono">/02</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2s6 7 6 12a6 6 0 0 1-12 0c0-5 6-12 6-12Z"/></svg>
+            </div>
+            <div class="body">
+              <h3>Dryland Harvest Collective</h3>
+              <p>A drought-resistant crop initiative that cut water use by a third while maintaining yield.</p>
+            </div>
+          </div>
+          <div class="portfolio-card">
+            <div class="card-top">
+              <span class="num mono">/03</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22v-8M12 14C7 14 5 10 5 6c5 0 7 3 7 8ZM12 14c5 0 7-4 7-8-5 0-7 3-7 8Z"/></svg>
+            </div>
+            <div class="body">
+              <h3>Little Roots Nursery</h3>
+              <p>A youth-run seedling nursery supplying affordable starter plants to three neighbouring towns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="pitch" id="pitch">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="idx mono">/07</span>
+        <h2>Pitch to Us</h2>
+        <span class="tag mono">Get in Touch</span>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="num mono">01</span>
+          <h4>Read the Criteria</h4>
+          <p>Know what we're looking for before you start writing.</p>
+        </div>
+        <div class="step">
+          <span class="num mono">02</span>
+          <h4>Do Your Numbers</h4>
+          <p>Bring a budget that's honest, and easy for us to follow.</p>
+        </div>
+        <div class="step">
+          <span class="num mono">03</span>
+          <h4>Submit Your Pitch</h4>
+          <p>Tell us your idea. We read every one that comes in.</p>
+        </div>
+      </div>
+
+      <div class="pitch-cta">
+        <div class="copy">
+          <p class="lede">
+            Have an idea for sustainable food security? We want to hear it.
+            Submit your pitch below, or scan the code to open the form.
+          </p>
+          <a class="btn-cta" href="https://forms.gle/XJJfdy82Lvt49tNG8" target="_blank" rel="noopener">
+            Submit Your Pitch
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <div class="qr-card">
+          <img src="rooted_capital_qr.png" alt="Scan to submit your pitch to Rooted Capital">
+          <span>Scan to Pitch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="foot-brand">Rooted Capital</span>
+      <span class="foot-tag mono">Investing in the Roots of Tomorrow</span>
+    </div>
+  </footer>
+
+</body>
+</html>
